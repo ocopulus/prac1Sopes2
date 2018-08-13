@@ -1,0 +1,28 @@
+{
+  "name": "practica1_sopes2",
+  "version": "1.0.0",
+  "description": "Monitor de Procesos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocopulus/prac1Sopes2.git"
+  },
+  "author": "Juan José Lemus Vásquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ocopulus/prac1Sopes2/issues"
+  },
+  "homepage": "https://github.com/ocopulus/prac1Sopes2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cookieparser": "^0.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3"
+  }
+}
