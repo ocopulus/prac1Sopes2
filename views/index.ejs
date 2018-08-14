@@ -126,6 +126,9 @@
         function addAgrafica(xVal, yVal){
             chart.options.data[0].dataPoints.push({x: xVal, y: yVal});
             chart.render();
+            if(chart.options.data[0].dataPoints.length > 50){
+                chart.options.data[0].dataPoints.shift();
+            }
         }
 
         function pedirMemeoria(){

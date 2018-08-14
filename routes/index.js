@@ -48,11 +48,11 @@ router.get('/proc', function(req, res){
 
 
 //Apis de Obtencion de Datos
-
+var aux1, aux2;
 router.get('/cpu', function(req, res){
 	/*var data = JSON.parse(fs.readFileSync('/proc/cpu_info', 'utf8'));
 	res.send(data);*/
-	var archivo = fs.readFileSync('/proc/cpu_info', 'utf8');
+	/*var archivo = fs.readFileSync('/proc/cpu_info', 'utf8');
 	var arreglo = archivo.split("\n");
 	var porcentaje = 0;
 	arreglo.forEach(function(valor, indice, array){
@@ -61,7 +61,14 @@ router.get('/cpu', function(req, res){
 			porcentaje += obj['porcentaje'];
 		}
 	});
-	porcentaje = porcentaje / 4;
+	porcentaje = porcentaje / 4;CPUUsado*/
+	var archivo = fs.readFileSync('/proc/cpu_info', 'utf8');
+	var obj = JSON.parse(archivo);
+	var dato1 = obj.CPUUsado - aux1;
+	var dato2 = obj.PorcentajeCPUUsado - aux2;
+	var porcentaje = ((dato1 - dato2)/dato1)*100;
+	aux1 = obj.CPUUsado;
+	aux2 = obj.PorcentajeCPUUsado;
 	res.send({porcentaje: porcentaje});
 });
 
